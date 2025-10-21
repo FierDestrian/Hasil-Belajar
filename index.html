@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script Talkshow - Memaknai Hasil Belajar Siswa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .script-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+        }
+        
+        .title {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+        
+        .participants {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .participant-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #3498db;
+        }
+        
+        .participant-card.host {
+            border-left-color: #e74c3c;
+        }
+        
+        .participant-card.senior {
+            border-left-color: #2ecc71;
+        }
+        
+        .participant-card.junior {
+            border-left-color: #f39c12;
+        }
+        
+        .participant-name {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .participant-role {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        .script-content {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .segment {
+            margin-bottom: 30px;
+        }
+        
+        .segment-title {
+            background: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .dialogue {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .dialogue.host {
+            border-left-color: #e74c3c;
+        }
+        
+        .dialogue.senior {
+            border-left-color: #2ecc71;
+        }
+        
+        .dialogue.junior {
+            border-left-color: #f39c12;
+        }
+        
+        .speaker {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .time {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            text-align: right;
+            margin-top: 10px;
+        }
+        
+        .action {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-style: italic;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .key-point {
+            background: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        .key-point h4 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .participants {
+                grid-template-columns: 1fr;
+            }
+            
+            .script-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="script-container">
+        <div class="header">
+            <h1 class="title">SCRIPT TALKSHOW</h1>
+            <p class="subtitle">"Memaknai Hasil Belajar Siswa: Antara Teori dan Realita Kelas"</p>
+        </div>
+        
+        <div class="participants">
+            <div class="participant-card host">
+                <div class="participant-name">Ibu Sri Nurfitriani</div>
+                <div class="participant-role">HOST / MODERATOR</div>
+            </div>
+            <div class="participant-card senior">
+                <div class="participant-name">Bapak Asep Ganjar, S.Pd</div>
+                <div class="participant-role">NARASUMBER SENIOR<br>(Ahli Pedagogi)</div>
+            </div>
+            <div class="participant-card junior">
+                <div class="participant-name">Bapak Fier Destrian, S.Pd</div>
+                <div class="participant-role">NARASUMBER JUNIOR<br>(Guru Inovator)</div>
+            </div>
+        </div>
+        
+        <div class="script-content">
+            <!-- PEMBUKAAN -->
+            <div class="segment">
+                <div class="segment-title">PEMBUKAAN (5 Menit)</div>
+                
+                <div class="dialogue host">
+                    <div class="speaker">HOST (Ibu Sri Nurfitriani):</div>
+                    "Selamat siang dan salam pendidikan! Ibu dan Bapak Guru yang saya hormati, hari ini kita akan membahas topik fundamental dalam dunia pendidikan: <strong>'Memaknai Hasil Belajar Siswa: Antara Teori dan Realita Kelas'</strong>."
+                </div>
+                
+                <div class="dialogue host">
+                    <div class="speaker">HOST (Ibu Sri Nurfitriani):</div>
+                    "Seringkali kita terjebak dalam pemahaman sempit tentang hasil belajar. Apakah sekadar angka di rapor? Atau ada makna yang lebih dalam? Mari kita bahas bersama:"
+                </div>
+                
+                <div class="dialogue host">
+                    <div class="speaker">HOST (Ibu Sri Nurfitriani):</div>
+                    "<strong>Bapak Asep Ganjar, S.Pd.</strong>, guru senior dengan pemahaman pedagogi mendalam, dan <strong>Bapak Fier Destrian, S.Pd.</strong>, guru muda dengan inovasi assessment terkini. Selamat datang!"
+                </div>
+            </div>
+
+            <!-- SEGMENT 1 -->
+            <div class="segment">
+                <div class="segment-title">SEGMENT 1: MEMBONGKAR MISKONSEPSI HASIL BELAJAR (15 Menit)</div>
+                
+                <div class="dialogue host">
+                    <div class="speaker">HOST (Ibu Sri Nurfitriani):</div>
+                    "Pak Asep, dalam pengalaman Bapak, apa saja miskonsepsi paling umum tentang 'hasil belajar' yang beredar di kalangan guru dan orang tua?"
+                </div>
+                
+                <div class="dialogue senior">
+                    <div class="speaker">NARASUMBER 1 (Bapak Asep Ganjar):</div>
+                    "Ada tiga miskonsepsi utama, Bu Sri. <strong>Pertama</strong>, hasil belajar dianggap sama dengan nilai ujian. <strong>Kedua</strong>, dianggap sebagai produk akhir, bukan proses. <strong>Ketiga</strong>, hanya mengukur aspek kognitif, mengabaikan afektif dan psikomotorik. Padahal, menurut Taksonomi Bloom revisi Anderson & Krathwohl, hasil belajar mencakup dimensi yang sangat kompleks."
+                </div>
+                
+                <div class="key-point">
+                    <h4>📊 TAKSONOMI BLOOM REVISI:</h4>
+                    <ul>
+                        <li><strong>Remembering</strong> (mengingat) → <strong>Creating</strong> (mencipta)</li>
+                        <li><strong>Cognitive</strong> (pengetahuan) → <strong>Psychomotor</strong> (keterampilan)</li>
+                        <li><strong>Affective</strong> (sikap dan nilai)</li>
+                    </ul>
+                </div>
+                
+                <div class="dialogue host">
+                    <div class="speaker">HOST (Ibu Sri Nurfitriani):</div>
+                    "Pak Fier, di lapangan, bagaimana miskonsepsi ini mempengaruhi cara kita menilai siswa?"
+                </div>
+                
+                <div class="dialogue junior">
+                    <div class="speaker">NARASUMBER 2 (Bapak Fier Destrian):</div>
+                    "Dampaknya sangat nyata, Bu. Kita cenderung <strong>'mengajar untuk ujian'</strong> bukan 'mengajar untuk pemahaman'. Siswa yang kreatif tapi kurang bagus di hafalan sering dianggap 'tidak berhasil'. Padahal, di era digital, kemampuan berpikir kritis dan kreativitas justru lebih dibutuhkan daripada sekadar menghafal."
+                </div>
+            </div>
+
+            <!-- SEGMENT 2 -->
+            <div class="segment">
+                <div class="segment-title">SEGMENT 2: TEORI HASIL BELAJAR DALAM PRAKTIK (20 Menit)</div>
+                
+                <div class="dialogue host">
+                    <div class="speaker">HOST (Ibu Sri Nurfitriani):</div>
+                    "Mari kita bahas teori-teori utama tentang hasil belajar. Pak Asep, bagaimana teori Behaviorisme, Kognitivisme, dan Konstruktivisme memandang hasil belajar?"
+                </div>
+                
+                <div class="dialogue senior">
+                    <div class="speaker">NARASUMBER 1 (Bapak Asep Ganjar):</div>
+                    "<strong>Behaviorisme</strong> (Skinner, Thorndike) melihat hasil belajar sebagai perubahan perilaku yang teramati. <strong>Kognitivisme</strong> (Piaget, Bruner) fokus pada proses mental dan pemahaman. Sedangkan <strong>Konstruktivisme</strong> (Vygotsky) menekankan bahwa pengetahuan dibangun sendiri oleh siswa melalui pengalaman."
+                </div>
+                
+                <div class="dialogue host">
+                    <div class="speaker">HOST (Ibu Sri Nurfitriani):</div>
+                    "Pak Fier, bagaimana menerapkan teori-teori ini dalam penilaian sehari-hari?"
+                </div>
+                
+                <div class="dialogue junior">
+                    <div class="speaker">NARASUMBER 2 (Bapak Fier Destrian):</div>
+                    "Kita bisa kombinasikan, Bu. <strong>Untuk keterampilan dasar</strong> seperti perkalian, kita gunakan pendekatan behavioris dengan drill. <strong>Untuk pemecahan masalah</strong>, gunakan kognitivisme dengan studi kasus. <strong>Untuk proyek kreatif</strong>, terapkan konstruktivisme dimana siswa membangun pengetahuan mereka sendiri."
+                </div>
+                
+                <div class="key-point">
+                    <h4>🎯 ASSESSMENT FOR LEARNING vs ASSESSMENT OF LEARNING:</h4>
+                    <ul>
+                        <li><strong>Formative Assessment</strong>: Penilaian proses, untuk perbaikan pembelajaran</li>
+                        <li><strong>Summative Assessment</strong>: Penilaian akhir, untuk pengambilan keputusan</li>
+                        <li><strong>Authentic Assessment</strong>: Penilaian autentik, konteks dunia nyata</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SEGMENT 3 -->
+            <div class="segment">
+                <div class="segment-title">SEGMENT 3: INOVASI PENILAIAN DI ERA MODERN (15 Menit)</div>
+                
+                <div class="dialogue host">
+                    <div class="speaker">HOST (Ibu Sri Nurfitriani):</div>
+                    "Pak Fier, sebagai guru inovator, bentuk penilaian alternatif apa yang bisa kita terapkan selain tes tertulis?"
+                </div>
+                
+                <div class="dialogue junior">
+                    <div class="speaker">NARASUMBER 2 (Bapak Fier Destrian):</div>
+                    "Banyak sekali, Bu! <strong>Portofolio digital</strong> untuk dokumentasi perkembangan, <strong>project-based assessment</strong> dimana siswa membuat produk nyata, <strong>self-assessment</strong> dan <strong>peer-assessment</strong> untuk melatih metakognisi, serta <strong>performance assessment</strong> seperti presentasi dan demo."
+                </div>
+                
+                <div class="dialogue host">
+                    <div class="speaker">HOST (Ibu Sri Nurfitriani):</div>
+                    "Pak Asep, dari sisi validitas dan reliabilitas, bagaimana memastikan penilaian alternatif ini tetap berkualitas?"
+                </div>
+                
+                <div class="dialogue senior">
+                    <div class="speaker">NARASUMBER 1 (Bapak Asep Ganjar):</div>
+                    "Kuncinya ada di <strong>rubrik penilaian yang jelas dan terukur</strong>. Rubrik harus memuat kriteria eksplisit, level pencapaian, dan deskriptor yang objektif. Jangan lupa <strong>multiple assessors</strong> untuk mengurangi bias, dan <strong>triangulasi data</strong> dari berbagai sumber penilaian."
+                </div>
+                
+                <div class="action">
+                    [SESI TANYA JAWAB DENGAN PENONTON - 15 MENIT]
+                </div>
+            </div>
+
+            <!-- PENUTUP -->
+            <div class="segment">
+                <div class="segment-title">PENUTUP & ACTION PLAN (5 Menit)</div>
+                
+                <div class="dialogue host">
+                    <div class="speaker">HOST (Ibu Sri Nurfitriani):</div>
+                    "Sebelum kita tutup, mohon berikan satu strategi praktis yang bisa guru terapkan besok pagi."
+                </div>
+                
+                <div class="dialogue senior">
+                    <div class="speaker">NARASUMBER 1 (Bapak Asep Ganjar):</div>
+                    "<strong>Gunakan pertanyaan reflektif</strong> di akhir pembelajaran. Tanya siswa: 'Apa yang paling berharga yang kamu pelajari hari ini?' Bukan 'Apa yang kamu hafal?'"
+                </div>
+                
+                <div class="dialogue junior">
+                    <div class="speaker">NARASUMBER 2 (Bapak Fier Destrian):</div>
+                    "<strong>Coba satu bentuk assessment alternatif</strong> dalam seminggu ke depan. Mulai dari yang sederhana seperti observasi partisipasi atau portofolio foto perkembangan."
+                </div>
+                
+                <div class="dialogue host">
+                    <div class="speaker">HOST (Ibu Sri Nurfitriani):</div>
+                    "Kesimpulan kita hari ini: <strong>Hasil belajar bukan tujuan, tetapi cerminan proses</strong>. Mari kita jadikan assessment sebagai alat untuk memahami, bukan hanya mengukur. Terima kasih kepada Pak Asep dan Pak Fier, serta semua Ibu/Bapak Guru. Teruslah belajar dan menginspirasi!"
+                </div>
+                
+                <div class="key-point">
+                    <h4>📝 REFLEKSI AKHIR:</h4>
+                    <p>"The aim of education should be to teach us how to think, rather than what to think - to improve our minds, so as to enable us to think for ourselves, rather than to load the memory with thoughts of other men." - Bill Beattie</p>
+                </div>
+                
+                <div class="time">[TOTAL WAKTU: 60 MENIT]</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
